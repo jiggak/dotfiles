@@ -1,0 +1,154 @@
+// https://coolors.co/image-picker
+
+// https://colordesigner.io/color-palette-from-image
+$pallet1: #223038;
+$pallet2: #D33E3B;
+$pallet3: #FAC58F;
+$pallet4: #1BDFE0;
+$pallet5: #16949C;
+$pallet6: #157277;
+$pallet7: #375464;
+
+$bg_color: rgba($pallet7, 0.5);
+$fg_color: #ffffff;
+$hover_color: rgba($pallet4, 0.5);
+$accent1: $pallet2;
+$accent2: $pallet3;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    // font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    // font-family: 'Open Sans Semi-Bold';
+    // font-family: 'CaskaydiaCove Nerd Font';
+    font-family: 'JetBrainsMono Nerd Font';
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: $fg_color;
+
+    // solid bar when chromium is active
+    // &.chromium {
+    //     background-color: #000000;
+    // }
+
+    // hide active window widget when no windows
+    &.empty .modules-center {
+        background-color: transparent;
+    }
+}
+
+.modules-left, .modules-center, .modules-right {
+    background-color: $bg_color;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin: 5px 5px 0 5px;
+}
+
+// Applied to all submodules of right group
+.modules-right > * > * {
+    padding: 0 10px;
+}
+
+#workspaces button {
+    $underline: -3px;
+
+    // Using box-shadow instead of border to bring line closer to text
+    box-shadow: inset 0 $underline $accent2;
+
+    // Avoid rounded borders under each button name
+    border: none;
+    border-radius: 0;
+
+    background-color: transparent;
+    color: $fg_color;
+
+    padding: 0 5px;
+    margin: 0 1px;
+
+    &:hover {
+        background-color: $hover_color;
+        box-shadow: inset 0 $underline $fg_color;
+    }
+
+    &.active {
+        box-shadow: inset 0 $underline $accent1;
+    }
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+@mixin icon {
+    font-size: 18px;
+}
+
+#backlight {
+    @include icon;
+}
+
+#battery {
+    @include icon;
+
+    // /sys/class/power_supply/BAT0/status
+    // "Unknown", "Charging", "Discharging", "Not charging", "Full"
+
+    // https://colordesigner.io/gradient-generator
+    $states: (
+        "empty": #ea1414,
+        "25": #d25b00,
+        "50": #af8000,
+        "75": #849b00,
+        "full": #48af18
+    );
+
+    @each $name, $color in $states {
+        &.#{$name} {
+            color: $color
+        }
+    }
+
+    &.empty:not(.charging):not(.plugged) {
+        background-color: #f53c3c;
+        color: #ffffff;
+        animation-name: blink;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+}
+
+#pulseaudio {
+    @include icon;
+}
+
+// #window,
+// #workspaces {
+//     margin: 0 6px;
+// }
+
+/* If workspaces is the leftmost module, omit left margin */
+// .modules-left > widget:first-child > #workspaces {
+//     margin-left: 0;
+// }
+
+/* If workspaces is the rightmost module, omit right margin */
+// .modules-right > widget:last-child > #workspaces {
+//     margin-right: 0;
+// }
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
