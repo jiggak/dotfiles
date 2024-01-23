@@ -51,11 +51,13 @@
     },
 
     "cpu": {
-        "format": " {usage}%"
+        // ":2" helps keep the widget width from changing as percent changes
+        "format": " {usage:2}%"
     },
 
     "memory": {
-        "format": "󰟜 {percentage}%"
+        // ":2" helps keep the widget width from changing as percent changes
+        "format": "󰟜 {percentage:2}%"
     },
 
     "pulseaudio": {
