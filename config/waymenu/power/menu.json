@@ -5,14 +5,14 @@
         "exec": ["swaylock", "-f", "-e"]
     },
     {
-        "label": "Logout",
-        "icon": "/usr/share/icons/Pop/128x128/actions/system-log-out.svg",
-        "exec": ["hyprctl", "dispatch", "exit"]
-    },
-    {
         "label": "Suspend",
         "icon": "/usr/share/icons/Pop/128x128/actions/system-suspend.svg",
         "exec": ["systemctl", "suspend"]
+    },
+    {
+        "label": "Logout",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-log-out.svg",
+        "exec": ["hyprctl", "dispatch", "exit"]
     },
     {
         "label": "Restart",

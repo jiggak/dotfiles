@@ -12,7 +12,7 @@ waymenu:
 	cp -r config/waymenu/power ~/.config/waymenu
 
 watch:
-	while true; do \
+	@while true; do \
 		inotifywait -qre close_write config; \
 		$(MAKE) all; \
 	done

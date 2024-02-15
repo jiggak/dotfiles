@@ -16,12 +16,11 @@ $accent1: $pallet2;
 $accent2: $pallet3;
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    // font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    // font-family: 'Open Sans Semi-Bold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     // font-family: 'CaskaydiaCove Nerd Font';
-    font-family: 'JetBrainsMono Nerd Font';
-    font-weight: bold;
+    // font-family: 'JetBrainsMono Nerd Font';
+    // font-weight: bold;
     font-size: 14px;
 }
 
@@ -56,7 +55,7 @@ window#waybar {
     $underline: -3px;
 
     // Using box-shadow instead of border to bring line closer to text
-    box-shadow: inset 0 $underline $accent2;
+    //box-shadow: inset 0 $underline $accent2;
 
     // Avoid rounded borders under each button name
     border: none;
@@ -70,10 +69,14 @@ window#waybar {
 
     &:hover {
         background-color: $hover_color;
-        box-shadow: inset 0 $underline $fg_color;
+        // box-shadow: inset 0 $underline $fg_color;
     }
 
     &.active {
+        box-shadow: inset 0 $underline $accent2;
+    }
+
+    &.urgent {
         box-shadow: inset 0 $underline $accent1;
     }
 }
