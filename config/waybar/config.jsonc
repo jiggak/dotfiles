@@ -68,5 +68,19 @@
         "format-icons": ["󰕿", "󰖀", "󰕾"],
         // "on-click": "pactl set-sink-mute 0 toggle"
         "on-click": "pavucontrol"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            // "1": "",
+            // "2": "",
+            // "3": "",
+            // "4": "",
+            // "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
     }
 }

@@ -14,6 +14,7 @@ $fg_color: #ffffff;
 $hover_color: rgba($pallet4, 0.5);
 $accent1: $pallet2;
 $accent2: $pallet3;
+$radius: 6px;
 
 * {
     font-family: 'Open Sans';
@@ -21,7 +22,7 @@ $accent2: $pallet3;
     // font-family: 'CaskaydiaCove Nerd Font';
     // font-family: 'JetBrainsMono Nerd Font';
     // font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 window#waybar {
@@ -41,7 +42,7 @@ window#waybar {
 
 .modules-left, .modules-center, .modules-right {
     background-color: $bg_color;
-    border-radius: 6px;
+    border-radius: $radius;
     padding: 5px 10px;
     margin: 5px 5px 0 5px;
 }
@@ -59,13 +60,13 @@ window#waybar {
 
     // Avoid rounded borders under each button name
     border: none;
-    border-radius: 0;
+
+    border-radius: $radius;
 
     background-color: transparent;
     color: $fg_color;
 
     padding: 0 5px;
-    margin: 0 1px;
 
     &:hover {
         background-color: $hover_color;
@@ -73,11 +74,13 @@ window#waybar {
     }
 
     &.active {
-        box-shadow: inset 0 $underline $accent2;
+        // box-shadow: inset 0 $underline $accent2;
+        color: $accent2;
     }
 
     &.urgent {
-        box-shadow: inset 0 $underline $accent1;
+        // box-shadow: inset 0 $underline $accent1;
+        color: $accent1;
     }
 }
 
