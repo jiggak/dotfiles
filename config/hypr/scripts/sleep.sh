@@ -1,3 +1,3 @@
-swayidle -w timeout 300 'swaylock -f' \
+swayidle -w timeout 300 'swaylock -f -e' \
             timeout 600 'systemctl suspend' \
-            before-sleep 'swaylock -f' &
+            before-sleep 'swaylock -f -e' &

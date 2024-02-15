@@ -1,0 +1,58 @@
+@import '../_pallet.scss';
+
+$border: 4px;
+$radius: 8px;
+$main-padding: 16px;
+$border-color: $pallet1;
+$background-color: $pallet7;
+$entry-text: white;
+$selected-color: transparent;
+$selected-border: $pallet1;
+$selected-text: $pallet3;
+
+* {
+    //font-family: 'JetBrainsMono Nerd Font';
+    //font-weight: bold;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 16px;
+    outline-style: none;
+}
+
+#window {
+    border-radius: $radius;
+    border: $border solid $border-color;
+    background-color: $background-color;
+    padding: $main-padding;
+    // this causes weird alpha bugs when using GSK_RENDERER=gl (the default for GTK4)
+    opacity: 0.95;
+}
+
+#search {
+    margin-bottom: $main-padding;
+}
+
+#list {
+    background-color: transparent;
+
+    row {
+        border-radius: $radius;
+
+        // invisible border so selected/unselected entries have same size
+        border: $border solid transparent;
+        color: $entry-text;
+
+        &:selected {
+            border: $border solid $selected-border;
+            background-color: $selected-color;
+
+            label {
+                color: $selected-text;
+            }
+        }
+
+        image {
+            padding: $main-padding / 3;
+        }
+    }
+}

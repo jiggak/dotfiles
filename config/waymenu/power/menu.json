@@ -1,0 +1,27 @@
+[
+    {
+        "label": "Lock",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-lock-screen.svg",
+        "exec": ["swaylock", "-f", "-e"]
+    },
+    {
+        "label": "Logout",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-log-out.svg",
+        "exec": ["hyprctl", "dispatch", "exit"]
+    },
+    {
+        "label": "Suspend",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-suspend.svg",
+        "exec": ["systemctl", "suspend"]
+    },
+    {
+        "label": "Restart",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-restart.svg",
+        "exec": ["systemctl", "reboot"]
+    },
+    {
+        "label": "Shutdown",
+        "icon": "/usr/share/icons/Pop/128x128/actions/system-shutdown.svg",
+        "exec": ["systemctl", "poweroff"]
+    }
+]

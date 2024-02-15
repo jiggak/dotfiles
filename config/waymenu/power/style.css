@@ -1,0 +1,12 @@
+#window {
+    border-radius: 10px;
+}
+
+#list row {
+    padding: 10px;
+}
+
+#list row image {
+    -gtk-icon-size: 96px;
+    padding-bottom: 5px;
+}
