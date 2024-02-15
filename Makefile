@@ -13,6 +13,6 @@ waymenu:
 
 watch:
 	while true; do \
+		inotifywait -qre close_write config; \
 		$(MAKE) all; \
-		inotifywait -qre close_write .; \
 	done
