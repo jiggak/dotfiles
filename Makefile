@@ -2,6 +2,7 @@ all: base waybar waymenu
 
 base:
 	-cp src/* ~/
+	cp -r src/.vim ~/
 	cd src/config && find . -type f -not -iname '*.scss' -exec cp -p --parents '{}' ~/.config \;
 
 waybar:

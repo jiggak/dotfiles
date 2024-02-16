@@ -20,3 +20,7 @@
 ## Screenshot
 
     grim
+
+## Fancy prompt
+
+    git clone https://github.com/liquidprompt/liquidprompt.git
