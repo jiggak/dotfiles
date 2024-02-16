@@ -1,18 +1,17 @@
-all: hypr waybar waymenu
+all: base waybar waymenu
 
-hypr:
-	cp -r config/hypr/* ~/.config/hypr/
+base:
+	-cp src/* ~/
+	cd src/config && find . -type f -not -iname '*.scss' -exec cp -p --parents '{}' ~/.config \;
 
 waybar:
-	sassc config/waybar/style.scss ~/.config/waybar/style.css
-	cp config/waybar/config.jsonc ~/.config/waybar/
+	sassc src/config/waybar/style.scss ~/.config/waybar/style.css
 
 waymenu:
-	sassc config/waymenu/style.scss ~/.config/waymenu/style.css
-	cp -r config/waymenu/power ~/.config/waymenu
+	sassc src/config/waymenu/style.scss ~/.config/waymenu/style.css
 
 watch:
 	@while true; do \
-		inotifywait -qre close_write config; \
+		inotifywait -qre close_write src; \
 		$(MAKE) all; \
 	done
