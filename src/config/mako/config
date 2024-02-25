@@ -1,0 +1,25 @@
+# Supported values are
+#   top-right, top-center, top-left,
+#   bottom-right, bottom-center, bottom-left,
+#   center-right, center-left and center
+anchor=top-right
+
+font='Open Sans' 12
+
+border-color=#636F6F
+border-radius=8
+
+background-color=#33393C
+text-color=#ffffff
+
+# ?
+progress-color=over #414559
+
+[urgency=high]
+border-color=#ef9f76
+
+[category=center]
+default-timeout=1000
+width=240
+padding=20
+anchor=center

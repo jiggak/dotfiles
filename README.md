@@ -24,3 +24,7 @@
 ## Fancy prompt
 
     git clone https://github.com/liquidprompt/liquidprompt.git
+
+## Notifications
+
+    mako

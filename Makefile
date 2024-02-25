@@ -1,8 +1,11 @@
 all: base waybar waymenu
 
 base:
+	# copy regular dotfiles (not recursive) from src/* to $HOME
 	-cp src/* ~/
+	# copy vim config dir
 	cp -r src/.vim ~/
+	# copy config/* recursively to $HOME/.config (ignore .scss)
 	cd src/config && find . -type f -not -iname '*.scss' -exec cp -p --parents '{}' ~/.config \;
 
 waybar:
