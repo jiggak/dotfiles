@@ -18,10 +18,9 @@ alias cat='bat'
 # PS1='[\u@\h \W]\$ '
 
 export PATH=~/.local/bin:$PATH
-#export GTK_THEME=Orchis-Dark-Compact
-
-source ~/liquidprompt/liquidprompt
-source ~/liquidprompt/themes/powerline/powerline.theme
-lp_theme powerline
+# export GTK_THEME=Orchis-Dark-Compact
 
 source /usr/share/git/completion/git-completion.bash
+
+# eval "$(steve completion)"
+eval "$(starship init bash)"
